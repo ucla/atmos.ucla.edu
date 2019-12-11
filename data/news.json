@@ -1,0 +1,12 @@
+{ 
+  "one": { 
+    "image": "https://atmos.ucla.edu/sites/default/files/ALex-Arnold-300x205.jpg",
+    "title": "AOS student awarded",
+    "body": "AOS graduate student Alex Arnold wins UC President’s Award for Outstanding Student Leadership for her exceptional leadership in student mentorship and building pathways to STEM higher education for underrepresented students."
+  },
+  "two": {
+    "image": "http://www-test.atmos.ucla.edu/Thorne.png",
+    "title": "In Memoriam",
+    "body": "Richard received an Honors B.Sc. in Mathematical Physics from Birmingham University, England in 1963 and Ph.D. in Physics at Massachusetts Institute of Technology in 1968. He joined the Meteorology Faculty at UCLA in July 1968, and in 2000 he was promoted to Distinguished Professor until his retirement in 2015. He was elected as a Fellow of the American Geophysical Union in 2000."
+  }
+}
