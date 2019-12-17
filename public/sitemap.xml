@@ -3,11 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www-test.atmos.ucla.edu/categories/</loc>
+    <loc>http://www-test.atmos.ucla.edu/</loc>
+    <lastmod>2019-12-16T16:13:53-08:00</lastmod>
   </url>
   
   <url>
     <loc>http://www-test.atmos.ucla.edu/</loc>
+    <lastmod>2019-12-16T16:13:53-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www-test.atmos.ucla.edu/categories/</loc>
   </url>
   
   <url>
