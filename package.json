@@ -1,0 +1,25 @@
+{
+  "name": "atmos.ucla.edu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hugo-cli": "^0.11.0",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "hugo; nodemon -r esm app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codycode/atmos.ucla.edu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codycode/atmos.ucla.edu/issues"
+  },
+  "homepage": "https://github.com/codycode/atmos.ucla.edu#readme"
+}
