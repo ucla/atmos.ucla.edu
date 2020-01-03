@@ -10,12 +10,10 @@
       <p class="branding-ribbon">SURROUNDING US ALL</p>
       <div class="img_sm"></div>
       <p class="standout">
-        We offer three bachelor of science programs, the Atmospheric and Oceanic
-        Sciences (AOS) major, the Climate Sciences major, and the
-        interdepartmental joint program in Mathematics and AOS. Our graduates go
-        on to graduate school in the sciences and engineering, the National
-        Weather Service, K-12 education, environmental law, and other jobs in
-        the private and public sectors.
+        We offer three bachelor of science programs, the Atmospheric and Oceanic Sciences (AOS) major, the Climate
+        Sciences major, and the interdepartmental joint program in Mathematics and AOS. Our graduates go on to graduate
+        school in the sciences and engineering, the National Weather Service, K-12 education, environmental law, and
+        other jobs in the private and public sectors.
       </p>
     </div>
   </div>
@@ -23,8 +21,7 @@
 <div class="container">
   <h2 class="module-header">Events</h2>
   <div class="card-deck">
-    {{ $counter := 0 }} {{ range .Site.Data.events }} {{ $counter = add $counter
-    1 }}
+    {{ $counter := 0 }} {{ range .Site.Data.events }} {{ $counter = add $counter 1 }}
     <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
       <img class="card-img" src="{{ .eventimage }}" />
       <div class="card-img-overlay card-event">
@@ -35,13 +32,9 @@
         </div>
       </div>
       <ul class="list-group list-group-flush">
+        <li class="list-group-item"><img src="https://atmos.ucla.edu/Icon/Time%20Baseline.svg" />{{ .eventtime }}</li>
         <li class="list-group-item">
-          <img src="https://atmos.ucla.edu/Icon/Time%20Baseline.svg" />{{
-          .eventtime }}
-        </li>
-        <li class="list-group-item">
-          <img src="https://atmos.ucla.edu/Icon/Location%20Baseline.svg" />{{
-          .eventlocation }}
+          <img src="https://atmos.ucla.edu/Icon/Location%20Baseline.svg" />{{ .eventlocation }}
         </li>
       </ul>
       <div class="card-body">
@@ -55,8 +48,7 @@
 <div class="container">
   <h2 class="module-header">News</h2>
   <div class="card-deck">
-    {{ $counter := 0 }} {{ range .Site.Data.news }} {{ $counter = add $counter 1
-    }}
+    {{ $counter := 0 }} {{ range .Site.Data.news }} {{ $counter = add $counter 1 }}
     <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
       <img class="card-img" src="{{ .image  }}" />
       <div class="card-body">
