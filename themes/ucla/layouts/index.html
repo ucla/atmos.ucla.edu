@@ -1,69 +1,81 @@
 ﻿{{ define "main" }}
 <div class="container">
-    <div class="row">
+  <div class="row">
     <div class="col-md-6 order-md-1 col-sm-12 order-sm-0 pb-4">
-      <img src="https://atmos.ucla.edu/treude.jpg" width="100%"/>
+      <img src="https://atmos.ucla.edu/treude.jpg" width="100%" />
     </div>
     <div class="col-md-6 order-md-0 col-sm-12 order-sm-1">
       <p class="branding-ribbon">THE SCIENCE</p>
-      <br/><p class="branding-ribbon">SURROUNDING US ALL</p>
+      <br />
+      <p class="branding-ribbon">SURROUNDING US ALL</p>
       <div class="img_sm"></div>
-      <p class="standout">We offer three bachelor of science programs, the Atmospheric and Oceanic Sciences (AOS) major, the Climate Sciences major, and the interdepartmental joint program in Mathematics and AOS. Our graduates go on to graduate school in the sciences and engineering, the National Weather Service, K-12 education, environmental law, and other jobs in the private and public sectors.</p>
+      <p class="standout">
+        We offer three bachelor of science programs, the Atmospheric and Oceanic
+        Sciences (AOS) major, the Climate Sciences major, and the
+        interdepartmental joint program in Mathematics and AOS. Our graduates go
+        on to graduate school in the sciences and engineering, the National
+        Weather Service, K-12 education, environmental law, and other jobs in
+        the private and public sectors.
+      </p>
     </div>
   </div>
 </div>
 <div class="container">
   <h2 class="module-header">Events</h2>
   <div class="card-deck">
-    {{ $counter := 0 }}
-    {{ range .Site.Data.events }}
-    {{ $counter = add $counter 1 }}
-      <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
-        <img class="card-img" src="{{ .eventimage }}" />
-        <div class="card-img-overlay card-event">
-          <div class="event-date">
-            <div class="event-date-dow">{{ dateFormat "Mon" .eventdate }}</div>
-            <div class="event-date-month">{{ dateFormat "Jan" .eventdate }}</div>
-            <div class="event-date-dom">{{ dateFormat "02" .eventdate }}</div>
-          </div>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <img src="https://atmos.ucla.edu/Icon/Time%20Baseline.svg">{{ .eventtime }}
-          </li>
-          <li class="list-group-item">
-            <img src="https://atmos.ucla.edu/Icon/Location%20Baseline.svg">{{ .eventlocation }}
-          </li>
-        </ul>
-        <div class="card-body">
-          <h5 class="card-title">{{ .eventtitle }}</h5>
-            <p>{{ .eventdescription }}</p>
+    {{ $counter := 0 }} {{ range .Site.Data.events }} {{ $counter = add $counter
+    1 }}
+    <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
+      <img class="card-img" src="{{ .eventimage }}" />
+      <div class="card-img-overlay card-event">
+        <div class="event-date">
+          <div class="event-date-dow">{{ dateFormat "Mon" .eventdate }}</div>
+          <div class="event-date-month">{{ dateFormat "Jan" .eventdate }}</div>
+          <div class="event-date-dom">{{ dateFormat "02" .eventdate }}</div>
         </div>
       </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <img src="https://atmos.ucla.edu/Icon/Time%20Baseline.svg" />{{
+          .eventtime }}
+        </li>
+        <li class="list-group-item">
+          <img src="https://atmos.ucla.edu/Icon/Location%20Baseline.svg" />{{
+          .eventlocation }}
+        </li>
+      </ul>
+      <div class="card-body">
+        <h5 class="card-title">{{ .eventtitle }}</h5>
+        <p>{{ .eventdescription }}</p>
+      </div>
+    </div>
     {{ end }}
   </div>
 </div>
 <div class="container">
-<h2 class="module-header">News</h2>
+  <h2 class="module-header">News</h2>
   <div class="card-deck">
-    {{ $counter := 0 }}
-    {{ range .Site.Data.news }}
-    {{ $counter = add $counter 1 }}
-      <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
-        <img class="card-img" src="{{ .image  }}" />
-        <div class="card-body">
-    	  <h5 class="card-title">{{ .title }}</h5>
-  	  <p>{{ .body }}
-        </div>
+    {{ $counter := 0 }} {{ range .Site.Data.news }} {{ $counter = add $counter 1
+    }}
+    <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
+      <img class="card-img" src="{{ .image  }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ .title }}</h5>
+        <p>{{ .body }}</p>
       </div>
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 1 on sm--></div>
-      {{ if eq ( mod $counter 2 ) 0 }}
-         <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 2 on md--></div>
-      {{ end }}
-      {{ if eq ( mod $counter 3 ) 0 }}
-        <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 3 on lg--></div>
-      {{ end }}
-    {{ end }}
+    </div>
+    <div class="w-100 d-none d-sm-block d-md-none">
+      <!-- wrap every 1 on sm-->
+    </div>
+    {{ if eq ( mod $counter 2 ) 0 }}
+    <div class="w-100 d-none d-md-block d-lg-none">
+      <!-- wrap every 2 on md-->
+    </div>
+    {{ end }} {{ if eq ( mod $counter 3 ) 0 }}
+    <div class="w-100 d-none d-lg-block d-xl-none">
+      <!-- wrap every 3 on lg-->
+    </div>
+    {{ end }} {{ end }}
   </div>
 </div>
 <script>
