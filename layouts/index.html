@@ -26,15 +26,17 @@
       <img class="card-img" src="{{ .Params.thumbnail }}" />
       <div class="card-img-overlay card-event">
         <div class="event-date">
-          <div class="event-date-dow">{{ dateFormat "Mon" .Params.date }}</div>
-          <div class="event-date-month">{{ dateFormat "Jan" .Params.date }}</div>
-          <div class="event-date-dom">{{ dateFormat "02" .Params.date }}</div>
+          <div class="event-date-dow">{{ dateFormat "Mon" .Date }}</div>
+          <div class="event-date-month">{{ dateFormat "Jan" .Date }}</div>
+          <div class="event-date-dom">{{ dateFormat "02" .Date }}</div>
         </div>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><img src="https://atmos.ucla.edu/Icon/Time%20Baseline.svg" />{{ .eventtime }}</li>
         <li class="list-group-item">
-          <img src="https://atmos.ucla.edu/Icon/Location%20Baseline.svg" />{{ .eventlocation }}
+          <img src="https://atmos.ucla.edu/Icon/Time%20Baseline.svg" />{{ dateFormat "12:30" .Date }}
+        </li>
+        <li class="list-group-item">
+          <img src="https://atmos.ucla.edu/Icon/Location%20Baseline.svg" />{{ .Params.location }}
         </li>
       </ul>
       <div class="card-body">
