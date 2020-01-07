@@ -1,4 +1,3 @@
 baseURL = "http://www-test.atmos.ucla.edu/"
 languageCode = "en-us"
 title = "Department of Atmospheric and Oceanic Sciences"
-theme = "ucla"
