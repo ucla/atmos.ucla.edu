@@ -21,14 +21,14 @@
 <div class="container">
   <h2 class="module-header">Events</h2>
   <div class="card-deck">
-    {{ $counter := 0 }} {{ range .Site.Data.events }} {{ $counter = add $counter 1 }}
+    {{ $counter := 0 }} {{ range where .Pages "Section" "events" }} {{ $counter = add $counter 1 }}
     <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
-      <img class="card-img" src="{{ .eventimage }}" />
+      <img class="card-img" src="{{ .Params.thumbnail }}" />
       <div class="card-img-overlay card-event">
         <div class="event-date">
-          <div class="event-date-dow">{{ dateFormat "Mon" .eventdate }}</div>
-          <div class="event-date-month">{{ dateFormat "Jan" .eventdate }}</div>
-          <div class="event-date-dom">{{ dateFormat "02" .eventdate }}</div>
+          <div class="event-date-dow">{{ dateFormat "Mon" .Params.date }}</div>
+          <div class="event-date-month">{{ dateFormat "Jan" .Params.date }}</div>
+          <div class="event-date-dom">{{ dateFormat "02" .Params.date }}</div>
         </div>
       </div>
       <ul class="list-group list-group-flush">
@@ -38,8 +38,8 @@
         </li>
       </ul>
       <div class="card-body">
-        <h5 class="card-title">{{ .eventtitle }}</h5>
-        <p>{{ .eventdescription }}</p>
+        <h5 class="card-title">{{ .Title }}</h5>
+        <p>{{ .Content }}</p>
       </div>
     </div>
     {{ end }}
@@ -48,12 +48,12 @@
 <div class="container">
   <h2 class="module-header">News</h2>
   <div class="card-deck">
-    {{ $counter := 0 }} {{ range .Site.Data.news }} {{ $counter = add $counter 1 }}
+    {{ $counter := 0 }} {{ range where .Pages "Section" "news" }} {{ $counter = add $counter 1 }}
     <div class="card col-sm-8 col-md-6 col-xl-3 mb-4">
-      <img class="card-img" src="{{ .image  }}" />
+      <img class="card-img" src="{{ .Params.thumbnail }}" />
       <div class="card-body">
-        <h5 class="card-title">{{ .title }}</h5>
-        <p>{{ .body }}</p>
+        <h5 class="card-title">{{ .Title }}</h5>
+        <p>{{ .Content }}</p>
       </div>
     </div>
     <div class="w-100 d-none d-sm-block d-md-none">

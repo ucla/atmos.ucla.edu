@@ -6,12 +6,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "hugo-cli": "^0.11.0",
-    "morgan": "^1.9.1",
-    "nodemon": "^2.0.2"
+    "morgan": "^1.9.1"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "hugo site; nodemon -r esm app/server.js"
+    "start": "hugo; node -r esm app/server.js"
   },
   "repository": {
     "type": "git",
