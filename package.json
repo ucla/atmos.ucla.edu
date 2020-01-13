@@ -6,13 +6,14 @@
   "dependencies": {
     "esm": "^3.2.25",
     "express": "^4.17.1",
+    "hugo": "^0.0.3",
     "hugo-cli": "^0.11.0",
     "morgan": "^1.9.1"
   },
   "devDependencies": {},
   "scripts": {
     "start": "hugo && node -r esm app/server.js",
-    "test": "yarn start"
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
