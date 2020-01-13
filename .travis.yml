@@ -2,8 +2,10 @@ language: node_js
 node_js:
   - 9.7.1
 
-before_install:
-  - brew install hugo
+addons:
+  homebrew:
+    packages:
+      - hugo
 
 deploy:
   provider: script
