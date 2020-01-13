@@ -10,7 +10,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "hugo && node -r esm app/server.js"
+    "start": "hugo && node -r esm app/server.js",
+    "test": "yarn start"
   },
   "repository": {
     "type": "git",
