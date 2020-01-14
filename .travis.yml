@@ -2,13 +2,6 @@ language: node_js
 node_js:
   - 9.7.1
 
-os: osx
-
-addons:
-  homebrew:
-    packages:
-      - hugo
-
 deploy:
   provider: script
   script: yarn start
