@@ -2,3 +2,6 @@
 public
 node_modules
 resources
+
+# files
+.env
