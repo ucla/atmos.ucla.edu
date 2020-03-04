@@ -45,10 +45,11 @@ passport.deserializeUser(function(id, done) {
 app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }));
 app.get(
   "/callback",
-  passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"], failureRedirect: "/" }),
-  (req, res) => {
-    res.redirect("/admin");
-  }
+  passport.authenticate("google", {
+    scope: ["https://www.googleapis.com/auth/plus.login"],
+    successRedirect: "/admin",
+    failureRedirect: "/"
+  })
 );
 
 // Serve public pages
