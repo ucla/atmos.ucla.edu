@@ -13,7 +13,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: "http://cms.atmos.ucla.edu:3000/admin"
+      callbackURL: "http://cms.atmos.ucla.edu:3000/callback"
     },
     (accessToken, refreshToken, profile, done) => {
       console.log(profile);
