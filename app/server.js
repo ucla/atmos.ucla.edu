@@ -46,8 +46,8 @@ app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleap
 app.get("/callback", passport.authenticate("google", { successRedirect: "/admin", failureRedirect: "/" }));
 
 // Serve public pages
-app.get("/admin", (req, res) => {
-  res.redirect("/auth");
+app.get("/admin", passport.authenticate("google", { failureRedirect: "/" }), (req, res) => {
+  res.send("/admin/index.html").status(200);
 });
 app.use(express.static(`${process.cwd()}/public`));
 
