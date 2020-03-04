@@ -17,7 +17,7 @@ passport.use(
     },
     (accessToken, refreshToken, profile, done) => {
       console.log(profile);
-      return done(null, user);
+      return done(null, profile);
     }
   )
 );
@@ -29,12 +29,12 @@ app.use(morgan("tiny"));
 
 // Serve admin page
 app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }));
-app.get("/callback", passport.authenticate("google", { failureRedirect: "/" }), (req, res) => {
-  console.log(res);
-  res.redirect("/admin");
-});
+app.get("/callback", passport.authenticate("google", { successRedirect: "/admin", failureRedirect: "/" }));
 
 // Serve public pages
+app.get("/admin", (req, res) => {
+  res.redirect("/auth");
+});
 app.use(express.static(`${process.cwd()}/public`));
 
 // Start server
