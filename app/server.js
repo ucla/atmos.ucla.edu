@@ -43,16 +43,22 @@ passport.deserializeUser(function(id, done) {
 
 // Serve admin page
 app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }));
-app.get("/callback", passport.authenticate("google", { successRedirect: "/admin", failureRedirect: "/" }));
-
-// Serve public pages
 app.get(
-  "/admin",
-  passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }),
+  "/callback",
+  passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"], failureRedirect: "/" }),
   (req, res) => {
-    res.send("/admin/index.html").status(200);
+    res.redirect("/admin");
   }
 );
+
+// Serve public pages
+app.get("/admin", (req, res) => {
+  if (!req.user) {
+    res.redirect("/");
+  } else {
+    res.send(`${pross.cwd()}/public/admin/index.html`);
+  }
+});
 app.use(express.static(`${process.cwd()}/public`));
 
 // Start server
