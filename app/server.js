@@ -31,6 +31,10 @@ app.use(morgan("tiny"));
 
 // Serve admin page
 app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }));
+app.get("/callback", passport.authenticate("google", { failureRedirect: "/" }), (req, res) => {
+  console.log(res);
+  res.send(200);
+});
 
 // Serve public pages
 app.use(express.static(`${process.cwd()}/public`));
