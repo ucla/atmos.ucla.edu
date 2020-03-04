@@ -37,5 +37,8 @@ app.get("/admin", (req, res) => {
 });
 app.use(express.static(`${process.cwd()}/public`));
 
+// Initialize passport
+app.use(passport.initialize());
+
 // Start server
 http.createServer(app).listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
