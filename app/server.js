@@ -46,9 +46,13 @@ app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleap
 app.get("/callback", passport.authenticate("google", { successRedirect: "/admin", failureRedirect: "/" }));
 
 // Serve public pages
-app.get("/admin", passport.authenticate("google", { failureRedirect: "/" }), (req, res) => {
-  res.send("/admin/index.html").status(200);
-});
+app.get(
+  "/admin",
+  passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }),
+  (req, res) => {
+    res.send("/admin/index.html").status(200);
+  }
+);
 app.use(express.static(`${process.cwd()}/public`));
 
 // Start server
