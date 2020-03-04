@@ -17,9 +17,7 @@ passport.use(
     },
     (accessToken, refreshToken, profile, done) => {
       console.log(profile);
-      User.findOrCreate({ googleId: profile.id }, (err, user) => {
-        return done(err, user);
-      });
+      return done(null, user);
     }
   )
 );
@@ -33,7 +31,7 @@ app.use(morgan("tiny"));
 app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }));
 app.get("/callback", passport.authenticate("google", { failureRedirect: "/" }), (req, res) => {
   console.log(res);
-  res.send(200);
+  res.redirect("/admin");
 });
 
 // Serve public pages
