@@ -27,6 +27,9 @@ const app = express();
 // Log requests
 app.use(morgan("tiny"));
 
+// Initialize passport
+app.use(passport.initialize());
+
 // Serve admin page
 app.get("/auth", passport.authenticate("google", { scope: ["https://www.googleapis.com/auth/plus.login"] }));
 app.get("/callback", passport.authenticate("google", { successRedirect: "/admin", failureRedirect: "/" }));
@@ -36,9 +39,6 @@ app.get("/admin", (req, res) => {
   res.redirect("/auth");
 });
 app.use(express.static(`${process.cwd()}/public`));
-
-// Initialize passport
-app.use(passport.initialize());
 
 // Start server
 http.createServer(app).listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
