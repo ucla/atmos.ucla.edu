@@ -9,7 +9,7 @@
     "express": "^4.17.1",
     "google-auth-library": "^5.8.0",
     "hugo-cli": "^0.11.0",
-    "minimist": "1.2.3",
+    "minimist": "1.2.6",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "passport": "^0.4.1",
